@@ -1,0 +1,79 @@
+/* Login.css */
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  height: 100vh;
+  margin: auto;
+  text-align: center;
+  background-color: #1A237E;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.form-title {
+  margin-bottom: 20px;
+  color: #ddd;
+  font-size: 35px;
+}
+
+.input-container {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ddd;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
+}
+
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transición suave al cambiar el color de fondo */
+}
+
+.submit-button:hover {
+  background-color: #45a049; /* Color ligeramente más oscuro al hacer hover */
+}
+
+.toggle-container {
+  margin-top: 10px;
+  color: #ddd;
+}
+
+.toggle-button {
+  background-color: transparent;
+  border: none;
+  color: #4caf50;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Transición suave al cambiar el color del texto */
+}
+
+.toggle-button:hover {
+  color: #45a049; /* Color ligeramente más oscuro al hacer hover */
+}
