@@ -1,0 +1,72 @@
+/* DiscountDetail.css */
+.mui-paper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px; /* Ancho del detalle del descuento */
+  max-height: 100%;
+  padding: 20px;
+  overflow-y: auto; /* Habilitar desplazamiento vertical si el contenido excede la altura */
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.detail-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.detail-content {
+  flex: 1;
+}
+
+.detail-logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.detail-payment,
+.detail-bank,
+.detail-vigencia {
+  margin-top: 20px;
+}
+
+.detail-vigencia{
+    font-weight: bold;
+}
+
+.detail-payment h3,
+.detail-bank h3,
+.detail-vigencia h3 {
+  margin-bottom: 10px;
+}
+
+.detail-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.go-to-discount,
+.close-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.go-to-discount:hover,
+.close-button:hover {
+  background-color: #0056b3;
+}
+
+.close-button {
+  align-self: flex-end;
+}

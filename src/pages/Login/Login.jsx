@@ -3,8 +3,10 @@ import axios from "axios";
 import Dashboard from "../Home/Home";
 import UserProfile from "../UserProfile/UserProfile";
 import "./Login.css";
+import Home from "../Home/Home";
 
 const Login = () => {
+  const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -33,8 +35,8 @@ const Login = () => {
 
   const toggleLogin = () => {
     setIsRegistering(!isRegistering);
-    setEmail('');
-    setPassword('');
+    setEmail("");
+    setPassword("");
     setError(null);
   };
 
@@ -42,6 +44,7 @@ const Login = () => {
     event.preventDefault();
 
     const credentials = {
+      nombre: nombre,
       correo: email,
       contrasena: password,
     };
@@ -71,7 +74,11 @@ const Login = () => {
       }
     } catch (error) {
       console.error("Error:", error.message);
-      setError(`Error al ${isRegistering ? 'registrar usuario' : 'iniciar sesión'}. Verifica tus credenciales.`);
+      setError(
+        `Error al ${
+          isRegistering ? "registrar usuario" : "iniciar sesión"
+        }. Verifica tus credenciales.`
+      );
       setIsLoggedIn(false);
       localStorage.removeItem("isLoggedIn");
       localStorage.removeItem("user");
@@ -85,6 +92,10 @@ const Login = () => {
     setUser(null);
   };
 
+  const handleNombreChange = (e) => {
+    setNombre(e.target.value);
+  };
+
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -96,12 +107,25 @@ const Login = () => {
   return (
     <div>
       {isLoggedIn ? (
-        <UserProfile user={user} handleLogout={handleLogout} />
+        <Home user={user} handleLogout={handleLogout} />
       ) : (
         <form onSubmit={handleLoginOrRegister} className="form-container">
           {error && <div className="error-message">{error}</div>}
 
-          <h2 className="form-title">{isRegistering ? 'Registro' : 'Login'}</h2>
+          <h2 className="form-title">{isRegistering ? "Registro" : "Login"}</h2>
+          {isRegistering && (
+            <div className="input-container">
+              <label className="label">Nombre:</label>
+              <input
+                type="text"
+                value={nombre}
+                onChange={handleNombreChange}
+                className="input-field"
+                required
+              />
+            </div>
+          )}
+
           <div className="input-container">
             <label className="label">Correo electrónico:</label>
             <input
@@ -125,13 +149,19 @@ const Login = () => {
           </div>
 
           <button type="submit" className="submit-button">
-            {isRegistering ? 'Registrate' : 'Iniciar sesión'}
+            {isRegistering ? "Registrate" : "Iniciar sesión"}
           </button>
 
           <div className="toggle-container">
-            <span>{isRegistering ? '¿Ya tienes una cuenta?' : '¿No tienes cuenta?'} </span>
-            <button type="button" onClick={toggleLogin} className="toggle-button">
-              {isRegistering ? 'Iniciar sesión' : 'Registrate'}
+            <span>
+              {isRegistering ? "¿Ya tienes una cuenta?" : "¿No tienes cuenta?"}{" "}
+            </span>
+            <button
+              type="button"
+              onClick={toggleLogin}
+              className="toggle-button"
+            >
+              {isRegistering ? "Iniciar sesión" : "Registrate"}
             </button>
           </div>
         </form>

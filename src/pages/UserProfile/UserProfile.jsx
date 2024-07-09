@@ -1,11 +1,8 @@
-// Dashboard.js
-
 import React from "react";
 import { Link } from "react-router-dom";
 import EditProfile from "../EditProfile/EditProfile";
 import Bank from "../../components/Bank/Bank";
 import Discount from "../../components/Discount/Discount";
-import Main from "../../components/Main/Main";
 
 const UserProfile = ({ user, handleLogout }) => {
   const { id, nombre, correo } = user;

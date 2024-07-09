@@ -1,0 +1,140 @@
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  position: relative;
+  min-width: 280px;
+  z-index: 1; /* Para que el menú se superponga */
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: none; /* Ocultar el ícono en pantallas grandes */
+}
+
+.menu-icon .icon {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: transform 0.3s ease;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+}
+
+.menu-icon.open .icon:nth-child(1) {
+  display: none;
+  transform: rotate(90deg);
+}
+
+.menu-icon.open .icon:nth-child(2) {
+  transform: translate(-10%, 100%) rotate(45deg);
+}
+
+.menu-icon.open .icon:nth-child(3) {
+  transform: translate(-10%, -100%) rotate(-45deg);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+  margin: 0 10px;
+}
+
+.nav-item a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-item a:hover {
+  color: #ddd;
+  transition: 0.3s ease-in-out;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-item:hover .submenu {
+  display: block;
+}
+
+.subcategory-item {
+  margin-top: 10px;
+}
+
+.subcategory-item a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.subcategory-item a:hover {
+  background-color: #555;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block; /* Mostrar el ícono en dispositivos móviles */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 30px; /* Ajustar según el tamaño de tu barra de navegación */
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  .nav-item a {
+    width: 100%;
+    padding: 12px 20px;
+    text-align: center;
+  }
+
+  .nav-item:hover .submenu {
+    display: none; /* Ocultar submenú en dispositivos móviles */
+  }
+}
