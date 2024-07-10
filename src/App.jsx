@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
-import Register from "./pages/Register/Register";
-import Login from "./pages/Login/Login"; // Importa tu componente Login
-import Home from "./pages/Home/Home"; // Importa tu componente Dashboard
+import Home from "./pages/Home/Home";
 import UserProfile from "./pages/UserProfile/UserProfile";
-import EditProfile from "./pages/EditProfile/EditProfile"; // Importa tu componente Register
+import EditProfile from "./pages/EditProfile/EditProfile";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -14,25 +12,38 @@ const App = () => {
     setIsLoggedIn(true);
   };
 
+  // Función para manejar el cierre de sesión
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
     <HashRouter>
       <Routes>
-        {/* Ruta para el login */}
+        {/* Ruta por defecto */}
         <Route
           path="/"
-          element={<Login onLoginSuccess={handleLoginSuccess} />}
+          element={
+            <Home isLoggedIn={isLoggedIn} onLoginSuccess={handleLoginSuccess} />
+          }
         />
 
-        <Route
-          path="/home"
-          element={isLoggedIn ? <Home /> : <Navigate to="/" />} // Redirige a '/' si no está autenticado
-        />
+        {/* Rutas protegidas */}
+        {isLoggedIn && (
+          <>
+            <Route path="/profile" element={<UserProfile />} />
+            <Route path="/edit-profile" element={<EditProfile />} />
+          </>
+        )}
 
-        {/* <Route path="/register" element={<Register />} /> */}
-
-        {/* <Route path="/profile" Component={UserProfile} />
-
-        <Route path="/edit-profile" Component={EditProfile} /> */}
+        {/* Ruta de ejemplo para manejar el cierre de sesión */}
+        {isLoggedIn && (
+          <Route
+            path="/logout"
+            element={<Navigate to="/" />}
+            onClick={handleLogout}
+          />
+        )}
       </Routes>
     </HashRouter>
   );

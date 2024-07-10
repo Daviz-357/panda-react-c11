@@ -7,7 +7,8 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { BiUser } from "react-icons/bi";
 import { BiCreditCard } from "react-icons/bi";
 import DiscountDetail from "../DiscountDetail/DiscountDetail";
-import BankFilter from "../BankFilter/BankFilter"; // Importa el componente de filtro de banco
+import BankFilter from "../BankFilter/BankFilter";
+import LoginModal from "../LoginModal/LoginModal"; // Importa el componente del modal de login
 
 const Discount = () => {
   const [discounts, setDiscounts] = useState([]);
@@ -20,8 +21,8 @@ const Discount = () => {
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const [selectedDiscount, setSelectedDiscount] = useState(null);
+  const [showLoginModal, setShowLoginModal] = useState(false);
 
-  // Fetch descuentos con paginación y filtro por banco
   const fetchDiscounts = useCallback(async (pageNumber, bankId) => {
     setLoading(true);
     try {
@@ -49,7 +50,6 @@ const Discount = () => {
     setLoading(false);
   }, []);
 
-  // Fetch bancos
   const fetchBancos = async () => {
     try {
       const response = await axios.get("http://localhost:8080/api/bancos");
@@ -64,14 +64,12 @@ const Discount = () => {
   }, []);
 
   useEffect(() => {
-    // Resetear la lista y la página al cambiar el filtro de banco
     setDiscounts([]);
     setPage(0);
     fetchDiscounts(0, selectedBank);
   }, [selectedBank, fetchDiscounts]);
 
   useEffect(() => {
-    // Fetch initial discounts
     fetchDiscounts(page, selectedBank);
   }, [page, selectedBank, fetchDiscounts]);
 
@@ -138,7 +136,7 @@ const Discount = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <BiUser className="user-icon" />
+        <BiUser className="user-icon" onClick={() => setShowLoginModal(true)} />
       </div>
 
       <Nav />
@@ -191,6 +189,10 @@ const Discount = () => {
           discount={selectedDiscount}
           onClose={handleCloseDetail}
         />
+      )}
+
+      {showLoginModal && (
+        <LoginModal onClose={() => setShowLoginModal(false)} />
       )}
     </div>
   );
