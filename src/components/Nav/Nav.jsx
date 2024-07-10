@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Nav.css"; // Estilos CSS para el menú de navegación
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo1.png";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,7 +22,6 @@ const Nav = () => {
         <div className="icon"></div>
         <div className="icon"></div>
         <div className="icon"></div>
-
       </div>
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         <NavItem title="Salud y Bienestar">

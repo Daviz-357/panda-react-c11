@@ -43,7 +43,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column; /* Alinear contenido en columna */
-  background-size: contain; /* Cubrir completamente el fondo */
+  background-size: cover; /* Cubrir completamente el fondo */
   background-position: top center; /* Mostrar solo la parte superior */
   height: 280px; /* Altura fija para controlar la visualización */
   position: relative;
@@ -77,10 +77,15 @@
 
 .discount-details {
   flex-grow: 1; /* Ocupar espacio restante */
-  padding: 15px; /* Espacio interno */
+  padding: 20px; /* Espacio interno */
   background-color: rgba(255, 255, 255, 1); /* Fondo semi-transparente */
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  margin: 50px;
+  margin-left: 7px;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  border: 1px solid #3333334d;
 }
 
 .discount-details h2 {

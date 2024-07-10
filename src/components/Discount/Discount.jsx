@@ -176,7 +176,7 @@ const Discount = () => {
               <p>
                 <BiCreditCard /> {discount.opciones_pago}
               </p>
-              <p>{discount.banco.nombre}</p>
+              {/* <p>{discount.banco.nombre}</p> */}
             </div>
           </div>
         ))}

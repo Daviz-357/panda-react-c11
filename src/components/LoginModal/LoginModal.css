@@ -78,7 +78,7 @@
 .submit-button {
   width: 100%;
   padding: 10px;
-  background-color: #886a65; /* Azul */
+  background-color: #000000c7;
   color: #fff;
   border: none;
   border-radius: 20px;
@@ -88,7 +88,7 @@
 }
 
 .submit-button:hover {
-  background-color: #5c3e25; /* Azul más oscuro al pasar el mouse */
+  background-color: #0b0501; /* Azul más oscuro al pasar el mouse */
 }
 
 /* Estilo del mensaje de error */
@@ -111,7 +111,7 @@
 .toggle-button {
   background: none;
   border: none;
-  color: #886a65; /* Azul */
+  color: #d82404; /* Azul */
   cursor: pointer;
   font-size: 1rem;
   transition: color 0.3s ease;
