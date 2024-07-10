@@ -34,8 +34,8 @@
   margin-top: 20px;
 }
 
-.detail-vigencia{
-    font-weight: bold;
+.detail-vigencia {
+  font-weight: bold;
 }
 
 .detail-payment h3,
@@ -60,6 +60,7 @@
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border-radius: 20px;
 }
 
 .go-to-discount:hover,

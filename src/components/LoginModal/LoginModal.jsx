@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./LoginModal.css"; // Asegúrate de tener estilos para el modal
+import logoImage from "../../assets/logo1.png";
 
 const LoginModal = ({ onClose }) => {
   const [nombre, setNombre] = useState("");
@@ -114,16 +115,24 @@ const LoginModal = ({ onClose }) => {
   return (
     <div className="login-modal-overlay" onClick={onClose}>
       <div className="login-modal" onClick={(e) => e.stopPropagation()}>
+        <img
+          src={logoImage}
+          alt="Logo de Panda Descuentos"
+          className="logo-image"
+        />
         <button onClick={onClose} className="close-button">
           X
-        </button>
-        <h2>{isRegistering ? "Registro" : "Login"}</h2>
+        </button>{" "}
+        <br />
+        <br />
+        <br />
+        <h2>{isRegistering ? "Registrate" : "Inicia sesión"}</h2>
         <form onSubmit={handleLoginOrRegister} className="form-container">
           {error && <div className="error-message">{error}</div>}
 
           {isRegistering && (
             <div className="input-container">
-              <label>Nombre:</label>
+              <label>Nombre</label>
               <input
                 type="text"
                 value={nombre}
@@ -135,7 +144,7 @@ const LoginModal = ({ onClose }) => {
           )}
 
           <div className="input-container">
-            <label>Correo electrónico:</label>
+            <label>Correo electrónico</label>
             <input
               type="email"
               value={email}
@@ -146,7 +155,7 @@ const LoginModal = ({ onClose }) => {
           </div>
 
           <div className="input-container">
-            <label>Contraseña:</label>
+            <label>Contraseña</label>
             <input
               type="password"
               value={password}
@@ -157,7 +166,7 @@ const LoginModal = ({ onClose }) => {
           </div>
 
           <button type="submit" className="submit-button">
-            {isRegistering ? "Regístrate" : "Iniciar sesión"}
+            {isRegistering ? "Continuar" : "Continuar"}
           </button>
 
           <div className="toggle-container">
