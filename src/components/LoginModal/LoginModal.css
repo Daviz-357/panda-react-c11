@@ -110,10 +110,8 @@
 }
 
 .toggle-button:hover {
-  color: #0056b3; /* Azul más oscuro al pasar el mouse */
+  color: inherit; /* Azul más oscuro al pasar el mouse */
 }
-
-
 
 /* Media query para hacer el modal responsivo en dispositivos pequeños */
 @media (max-width: 500px) {

@@ -1,4 +1,3 @@
-// DiscountDetail.js
 import React, { useRef } from "react";
 import { Paper, ClickAwayListener } from "@mui/material";
 import "./DiscountDetail.css"; // Estilo específico para el detalle
@@ -13,12 +12,18 @@ const DiscountDetail = ({ discount, onClose }) => {
   };
 
   const handleGoToDiscount = () => {
-    const { idBanco} = discount.banco;
+    // Verificar que discount y discount.banco estén definidos
+    if (!discount || !discount.banco) {
+      console.error("Datos de descuento incompletos:", discount);
+      return;
+    }
+
+    const { id } = discount.banco;
     const { slug } = discount;
 
     let url = "";
 
-    switch (idBanco) {
+    switch (id) {
       case 1:
         url = `https://www.bci.cl/beneficios/beneficios/${slug}`;
         break;
@@ -62,7 +67,6 @@ const DiscountDetail = ({ discount, onClose }) => {
             <div className="detail-bank">
               <h3>Banco: {discount.banco.nombre}</h3>
               <img src={discount.banco.logo} alt="Banco Logo" />
-              
             </div>
             <div className="detail-vigencia">
               <p>{discount.vigencia}</p>
