@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Nav.css"; // Estilos CSS para el menú de navegación
+import logo from "../../assets/logo.png";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,7 +11,10 @@ const Nav = () => {
 
   return (
     <nav className="main-nav">
-      <div className="nav-logo"></div>
+      <div className="nav-logo">
+        <img src={logo} alt="logo-Panda" className="logo" />
+        <h3>Panda Descuentos</h3>
+      </div>
       <div
         className={`menu-icon ${menuOpen ? "open" : ""}`}
         onClick={toggleMenu}
@@ -18,7 +22,7 @@ const Nav = () => {
         <div className="icon"></div>
         <div className="icon"></div>
         <div className="icon"></div>
-        
+
       </div>
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         <NavItem title="Salud y Bienestar">
