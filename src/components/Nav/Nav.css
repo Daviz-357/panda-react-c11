@@ -1,3 +1,7 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
 .main-nav {
   display: flex;
   justify-content: space-between;
@@ -20,13 +24,13 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  padding: 0px;
   background-color: aliceblue;
   margin-right: 5px;
 }
 
-.h3 {
-  line-height: 200px;
+.nav-logo h3 {
+  margin: 0;
+  line-height: 1;
 }
 
 .menu-icon {
@@ -40,22 +44,19 @@
   background-color: #fff;
   margin: 5px 0;
   transition: transform 0.3s ease;
-  top: 50%;
-  left: 50%;
   transform-origin: center center;
 }
 
 .menu-icon.open .icon:nth-child(1) {
   display: none;
-  transform: rotate(90deg);
 }
 
 .menu-icon.open .icon:nth-child(2) {
-  transform: translate(-10%, 100%) rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .menu-icon.open .icon:nth-child(3) {
-  transform: translate(-10%, -100%) rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .nav-links {
@@ -67,7 +68,36 @@
 
 .nav-item {
   position: relative;
-  margin: 0 10px;
+  margin: 0 20px;
+}
+
+.nav-button {
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px; /* Tamaño fijo para todos los botones */
+  height: 50px; /* Tamaño fijo para todos los botones */
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  color: #333; /* Color del texto dentro de los botones */
+}
+
+.nav-icon {
+  margin-right: 10px;
+}
+
+.nav-button:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #007aff;
 }
 
 .nav-item a {
@@ -88,7 +118,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #333;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
@@ -104,7 +134,7 @@
 
 .subcategory-item a {
   display: block;
-  color: #fff;
+  color: #000; /* Texto negro */
   text-decoration: none;
   padding: 8px 12px;
   border-radius: 3px;
@@ -112,7 +142,7 @@
 }
 
 .subcategory-item a:hover {
-  background-color: #555;
+  background-color: rgba(200, 200, 200, 0.3); /* Fondo semi-transparente al hover */
 }
 
 /* Estilos para dispositivos móviles */
@@ -125,7 +155,7 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 30px; /* Ajustar según el tamaño de tu barra de navegación */
+    top: 100%;
     left: 0;
     width: 100%;
     background-color: #333;

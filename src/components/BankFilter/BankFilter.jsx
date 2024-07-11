@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./BankFilter.css"; // Importa el archivo CSS
 
 const BankFilter = ({ bancos = [], selectedBank, onBankChange }) => {
   return (

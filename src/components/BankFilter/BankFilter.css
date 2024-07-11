@@ -1,0 +1,13 @@
+.bank-filter {
+  margin: 10px 0;
+}
+
+.bank-filter label {
+  margin-right: 10px;
+}
+
+.bank-filter select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

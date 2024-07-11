@@ -1,34 +1,34 @@
 .discount-container {
   width: 100%;
-  margin: 0 auto; /* Centrar el contenedor */
+  margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
 }
 
 .search-container {
-  text-align: center; /* Centrar elementos hijos horizontalmente */
-  margin-bottom: 20px; /* Espacio debajo de la barra de búsqueda */
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .user-icon {
-  position: relative; /* Espacio a la derecha del campo de búsqueda */
+  position: relative;
 }
 
 .search-input {
   width: 100%;
-  max-width: 400px; /* Ancho máximo de la barra de búsqueda */
-  padding: 12px; /* Aumentar el padding para más espacio interno */
-  border: 2px solid #3498db; /* Borde sólido con color azul */
-  border-radius: 25px; /* Borde redondeado */
+  max-width: 400px;
+  padding: 12px;
+  border: 2px solid #3498db;
+  border-radius: 25px;
   font-size: 16px;
   box-sizing: border-box;
-  outline: none; /* Eliminar el outline predeterminado */
-  transition: border-color 0.3s ease; /* Transición para el borde al hacer hover */
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
 .discount-list {
   display: grid;
-  gap: 25px; /* Espacio entre las tarjetas */
+  gap: 25px;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   transition: grid-template-columns 0.3s ease-in-out;
   padding: 20px;
@@ -42,11 +42,17 @@
   border-radius: 12px;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column; /* Alinear contenido en columna */
-  background-size: cover; /* Cubrir completamente el fondo */
-  background-position: top center; /* Mostrar solo la parte superior */
-  height: 280px; /* Altura fija para controlar la visualización */
+  flex-direction: column;
+  background-size: contain;
+  background-position: top center;
+  height: 280px;
   position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.discount-item:hover {
+  transform: scale(1.05);
 }
 
 .discount-logos {
@@ -76,16 +82,11 @@
 }
 
 .discount-details {
-  flex-grow: 1; /* Ocupar espacio restante */
-  padding: 20px; /* Espacio interno */
-  background-color: rgba(255, 255, 255, 1); /* Fondo semi-transparente */
+  flex-grow: 1;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 1);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  margin: 50px;
-  margin-left: 7px;
-  margin-right: 7px;
-  margin-bottom: 7px;
-  border: 1px solid #3333334d;
 }
 
 .discount-details h2 {

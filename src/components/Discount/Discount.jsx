@@ -23,6 +23,7 @@ const Discount = () => {
   const [selectedDiscount, setSelectedDiscount] = useState(null);
   const [showLoginModal, setShowLoginModal] = useState(false);
 
+  // Fetch descuentos con paginación y filtro por banco
   const fetchDiscounts = useCallback(async (pageNumber, bankId) => {
     setLoading(true);
     try {
@@ -50,6 +51,7 @@ const Discount = () => {
     setLoading(false);
   }, []);
 
+  // Fetch bancos
   const fetchBancos = async () => {
     try {
       const response = await axios.get("http://localhost:8080/api/bancos");
@@ -64,12 +66,14 @@ const Discount = () => {
   }, []);
 
   useEffect(() => {
+    // Resetear la lista y la página al cambiar el filtro de banco
     setDiscounts([]);
     setPage(0);
     fetchDiscounts(0, selectedBank);
   }, [selectedBank, fetchDiscounts]);
 
   useEffect(() => {
+    // Fetch initial discounts
     fetchDiscounts(page, selectedBank);
   }, [page, selectedBank, fetchDiscounts]);
 
@@ -176,7 +180,7 @@ const Discount = () => {
               <p>
                 <BiCreditCard /> {discount.opciones_pago}
               </p>
-              {/* <p>{discount.banco.nombre}</p> */}
+              <p>{discount.banco.nombre}</p>
             </div>
           </div>
         ))}
