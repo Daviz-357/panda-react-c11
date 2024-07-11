@@ -1,13 +1,35 @@
 .bank-filter {
-  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Alinea los elementos a la derecha */
+  margin-bottom: 20px; /* Espacio debajo del filtro */
+  font-family: Arial, sans-serif;
+  margin-top: 20px; /* Espacio superior para separar del Nav */
 }
 
 .bank-filter label {
-  margin-right: 10px;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .bank-filter select {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  width: 100%;
+  max-width: 300px; /* Ancho máximo del select */
+  padding: 10px;
+  font-size: 1rem;
+  color: #333;
+  border: 2px solid #3498db; /* Borde sólido con color azul */
+  border-radius: 12px;
+  outline: none; /* Eliminar el outline predeterminado */
+  transition: border-color 0.3s ease; /* Transición para el borde al hacer hover */
+}
+
+.bank-filter select:hover {
+  border-color: #2980b9; /* Color del borde al hacer hover */
+}
+
+.bank-filter select option {
+  font-size: 1rem;
+  color: #333;
 }

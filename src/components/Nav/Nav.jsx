@@ -34,8 +34,9 @@ const Nav = () => {
 
         <NavItem title="Sabores" icon="🍴">
           <SubcategoryItem title="Restaurantes" />
+          <SubcategoryItem title="Cafeteria" />
           <SubcategoryItem title="Vinos y Licores" />
-          <SubcategoryItem title="Gourmet y Delicatessen" />
+          <SubcategoryItem title="Postres" />
           <SubcategoryItem title="Comida Saludable" />
         </NavItem>
 
@@ -45,15 +46,17 @@ const Nav = () => {
           <SubcategoryItem title="Hogar Verde" />
         </NavItem>
 
+        <NavItem title="Viajes y Panoramas" icon="✈️">
+          <SubcategoryItem title="Cine" />
+          <SubcategoryItem title="Rent a car y Transfer" />
+          <SubcategoryItem title="Entretención y Tiempo Libre" />
+        </NavItem>
+
         <NavItem title="Otros Servicios" icon="⚙️">
           <SubcategoryItem title="Automotriz" />
           <SubcategoryItem title="Centros Educativos" />
-          <SubcategoryItem title="Soluciones para PYMES" />
-        </NavItem>
-
-        <NavItem title="Viajes y Panoramas" icon="✈️">
-          <SubcategoryItem title="Rent-a-car y Transfer" />
-          <SubcategoryItem title="Entretención y Tiempo Libre" />
+          <SubcategoryItem title="Supermercados" />
+          <SubcategoryItem title="Mascotas" />
         </NavItem>
       </ul>
     </nav>

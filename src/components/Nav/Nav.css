@@ -142,7 +142,12 @@ body {
 }
 
 .subcategory-item a:hover {
-  background-color: rgba(200, 200, 200, 0.3); /* Fondo semi-transparente al hover */
+  background-color: rgba(
+    200,
+    200,
+    200,
+    0.3
+  ); /* Fondo semi-transparente al hover */
 }
 
 /* Estilos para dispositivos móviles */
